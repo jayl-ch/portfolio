@@ -1,0 +1,42 @@
+{
+  "profile": {
+    "name": "Jay Lloyd Chicogo",
+    "address": "Southern Luzon, Philippines",
+    "role": "BSIT Student | Aspiring Web Developer"
+  },
+  "about": "I'm an Information Technology student with a strong interest in web development. I enjoy learning how to create applications from the ground up — from designing responsive frontends to building scalable backends. My goal is to keep improving through hands-on projects while preparing for a professional career as a full stack developer.",
+  "journey": [
+    {
+      "title": "BS Information Technology",
+      "description": "Bicol University Polangui",
+      "year": 2028
+    },
+    {
+      "title": "Hello World!",
+      "description": "Wrote my first line of code",
+      "year": 2022
+    }
+  ],
+  "techstack": [
+    {
+      "category": "Frontend",
+      "tools": [
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Java",
+        "TailwindCSS",
+        "SCSS",
+        "Vite"
+      ]
+    },
+    {
+      "category": "Backend",
+      "tools": ["Node.js", "Express.js", "MySQL"]
+    },
+    {
+      "category": "Developer Tools",
+      "tools": ["Git", "GitHub"]
+    }
+  ]
+}
