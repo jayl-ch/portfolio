@@ -1,20 +1,21 @@
-import { useState } from "react";
 import "./styles/App.css";
 import Header from "./components/Header";
-import { dark } from "./lib/body.toggle";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
+import useDark from "./hooks/dark-theme";
+import { setDark } from "./lib/body.toggle";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const { isDark, toggleIsDark } = useDark();
 
-  const toggleIsDark = () => setIsDark((prev) => !prev);
+  setDark(isDark);
 
-  dark(isDark);
   return (
     <>
       <div className="flex flex-col gap-4">
         <Header isDark={isDark} toggleIsDark={toggleIsDark} />
         <Main />
+        <Footer />
       </div>
     </>
   );

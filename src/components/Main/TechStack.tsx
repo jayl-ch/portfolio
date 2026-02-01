@@ -1,13 +1,13 @@
 import { Card } from "../ui/card";
 import { techstack } from "@/mocks/data";
-import techIcon from "@/assets/techstack.svg";
+import TechStackIcon from "../../icons/techstack";
 import type { TechStackItem } from "@/types/types";
 
 const TechStack = () => {
   return (
-    <Card className="p-4">
+    <Card className="gap-2">
       <div className="flex items-center gap-2">
-        <img className="w-4" src={techIcon} alt="" />
+        <TechStackIcon />
         <h2 className="font-bold text-xl">Tech Stack</h2>
       </div>
       {techstack.map(({ category, tools }: TechStackItem) => (

@@ -1,6 +1,7 @@
 import AboutMe from "./Main/About";
 import Experience from "./Main/Experience";
 import TechStack from "./Main/TechStack";
+import Projects from "./Main/Projects";
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
         <AboutMe />
         <Experience />
         <TechStack />
+        <Projects />
       </div>
     </main>
   );

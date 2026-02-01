@@ -1,9 +1,11 @@
-export const dark = (isDark: boolean) => {
+export const setDark = (isDark: boolean) => {
   const body = document.body;
 
-  if (isDark === true) {
-    body.style.backgroundColor = "#000";
+  if (isDark) {
+    localStorage.setItem("theme", "dark");
+    body.classList.add("dark");
   } else {
-    body.style.backgroundColor = "#fff";
+    localStorage.setItem("theme", "");
+    body.classList.remove("dark");
   }
 };

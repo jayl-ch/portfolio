@@ -1,9 +1,9 @@
 import react from "@/assets/react.svg";
 import { Button } from "../ui/button";
 import type { DarkToggleProps } from "@/types/types";
-import locationPin from "@/assets/location-pin.svg";
-import emailIcon from "@/assets/email.svg";
-import resumeIcon from "@/assets/resume.svg";
+import LocationIcon from "../../icons/location";
+import EmailIcon from "../../icons/email";
+import ResumeIcon from "@/icons/resume";
 import sunIcon from "@/assets/sun.svg";
 import moonIcon from "@/assets/moon.svg";
 import verifiedIcon from "@/assets/verified.svg";
@@ -17,27 +17,24 @@ const Img = () => (
   />
 );
 
-const Details = ({ isDark }: DarkToggleProps) => {
+const Details = () => {
   return (
     <div className="flex flex-col gap-1">
-      <p
-        className={`font-bold text-xl flex items-center gap-2 ${isDark ? "text-white" : "text-black"}`}
-      >
+      <p className={`font-bold text-xl flex items-center gap-2`}>
         {profile.name} <img className="w-4" src={verifiedIcon} alt="" />
       </p>
       <p className="text-gray-500 flex items-center gap-1">
-        <img className="inline w-4" src={locationPin} alt=" " />
+        <LocationIcon />
         {profile.address}
       </p>
-      <p className={`${isDark ? "text-white" : "text-black"}`}>
-        {profile.role}
-      </p>
-      <div className="flex gap-2">
+      <p className={``}>{profile.role}</p>
+      <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm">
-          <img className="w-4" src={resumeIcon} alt=" " /> View Resume
+          <ResumeIcon />
+          View Resume
         </Button>
         <Button size="sm" variant="outline">
-          <img className="w-4" src={emailIcon} alt=" " /> Send Email
+          <EmailIcon /> Send Email
         </Button>
       </div>
     </div>
@@ -47,7 +44,7 @@ const Details = ({ isDark }: DarkToggleProps) => {
 const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   return (
     <Button
-      variant={isDark ? "default" : "outline"}
+      variant="outline"
       className="w-10 aspect-square p-3"
       onClick={toggleIsDark}
     >
@@ -61,7 +58,7 @@ const Profile = ({ isDark, toggleIsDark }: DarkToggleProps) => {
     <div className="max-w-250 flex justify-between items-start mx-auto">
       <div className="flex items-center gap-4">
         <Img />
-        <Details isDark={isDark} />
+        <Details />
       </div>
       <DarkToggle isDark={isDark} toggleIsDark={toggleIsDark} />
     </div>

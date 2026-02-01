@@ -1,12 +1,12 @@
 import { Card } from "../ui/card";
-import aboutIcon from "@/assets/about.svg";
 import { about } from "@/mocks/data";
+import AboutIcon from "@/icons/about";
 
 const AboutMe = () => {
   return (
-    <Card className="p-4 flex flex-col gap-2">
+    <Card className="gap-2">
       <div className="flex gap-2 items-center">
-        <img className="w-4" src={aboutIcon} alt="" />
+        <AboutIcon />
         <h2 className="font-bold text-xl">About Me</h2>
       </div>
       <p>{about}</p>
