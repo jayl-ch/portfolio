@@ -24,7 +24,6 @@
         "JavaScript",
         "React",
         "TypeScript",
-        "Java",
         "TailwindCSS",
         "SCSS",
         "Vite"
@@ -32,11 +31,11 @@
     },
     {
       "category": "Backend",
-      "tools": ["Node.js", "Express.js", "MySQL"]
+      "tools": ["Node.js", "Express.js", "Java", "MySQL"]
     },
     {
       "category": "Developer Tools",
-      "tools": ["Git", "GitHub"]
+      "tools": ["Git", "GitHub", "Vercel", "Railway"]
     }
   ]
 }
