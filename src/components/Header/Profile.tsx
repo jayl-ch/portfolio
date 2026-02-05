@@ -9,25 +9,41 @@ import moonIcon from "@/assets/moon.svg";
 import verifiedIcon from "@/assets/verified.svg";
 import { profile } from "@/mocks/data";
 
+const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
+  return (
+    <Button
+      variant="outline"
+      className="w-10 aspect-square p-3"
+      onClick={toggleIsDark}
+    >
+      <img className="w-full" src={isDark ? moonIcon : sunIcon} alt="" />
+    </Button>
+  );
+};
+
 const Img = () => (
   <img
-    className="border rounded-xl h-35 w-35"
+    className="border rounded-xl h-40 w-40"
     src={react}
     alt="profile placeholder"
   />
 );
 
-const Details = () => {
+const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   return (
-    <div className="flex flex-col gap-1">
-      <p className={`font-bold text-xl flex items-center gap-2`}>
-        {profile.name} <img className="w-4" src={verifiedIcon} alt="" />
-      </p>
-      <p className="text-gray-500 flex items-center gap-1">
+    <div className="flex flex-col gap-1 w-full">
+      <div className="flex justify-between w-full">
+        <div className="flex gap-2 items-center">
+          <p className={`font-bold text-xl sm:text-2xl`}>{profile.name}</p>
+          <img className="w-4" src={verifiedIcon} alt="" />
+        </div>
+        <DarkToggle isDark={isDark} toggleIsDark={toggleIsDark} />
+      </div>
+      <p className="text-gray-500 text-xs flex items-center gap-1 sm:text-sm">
         <LocationIcon />
         {profile.address}
       </p>
-      <p className={``}>{profile.role}</p>
+      <p className="text-sm sm:text-[1.125rem]">{profile.role}</p>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm">
           <ResumeIcon />
@@ -41,26 +57,13 @@ const Details = () => {
   );
 };
 
-const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
-  return (
-    <Button
-      variant="outline"
-      className="w-10 aspect-square p-3"
-      onClick={toggleIsDark}
-    >
-      <img className="w-full" src={isDark ? moonIcon : sunIcon} alt="" />
-    </Button>
-  );
-};
-
 const Profile = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   return (
     <div className="max-w-250 flex justify-between items-start mx-auto">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 w-full">
         <Img />
-        <Details />
+        <Details isDark={isDark} toggleIsDark={toggleIsDark} />
       </div>
-      <DarkToggle isDark={isDark} toggleIsDark={toggleIsDark} />
     </div>
   );
 };
