@@ -1,8 +1,10 @@
+import { profile } from "../mocks/data.json";
+
 const Footer = () => {
   return (
     <footer className="mt-5">
       <div className="max-w-250 mx-auto text-center border-t py-5">
-        © 2026 Jay Lloyd. All rights reserved.
+        &copy; 2026 {profile.name}. All Rights Reserved.
       </div>
     </footer>
   );
