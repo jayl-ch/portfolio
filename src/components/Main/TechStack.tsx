@@ -13,7 +13,7 @@ const TechStack = () => {
       {techstack.map(({ category, tools }: TechStackItem) => (
         <div key={category} className="flex flex-col gap-2">
           <h3 className="font-bold">{category}</h3>
-          <div className="flex gap-1 p-0">
+          <div className="flex gap-1 p-0 flex-wrap">
             {tools.map((tool) => (
               <p
                 key={tool}
