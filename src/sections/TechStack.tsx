@@ -1,7 +1,7 @@
 import { Card } from "../components/ui/card";
-import { techstack } from "@/mocks/data";
+import { techstack } from "../mocks/data.json";
 import TechStackIcon from "../icons/techstack";
-import type { TechStackItem } from "@/types/types";
+import type { TechStackItem } from "../types/types";
 import { Link } from "react-router-dom";
 
 const TechStack = () => {

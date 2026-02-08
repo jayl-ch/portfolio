@@ -1,13 +1,13 @@
 import react from "@/assets/react.svg";
 import { Button } from "../components/ui/button";
-import type { DarkToggleProps } from "@/types/types";
+import type { DarkToggleProps } from "../types/types";
 import LocationIcon from "../icons/location";
 import EmailIcon from "../icons/email";
-import ResumeIcon from "@/icons/resume";
+import ResumeIcon from "../icons/resume";
 import sunIcon from "@/assets/sun.svg";
 import moonIcon from "@/assets/moon.svg";
 import verifiedIcon from "@/assets/verified.svg";
-import { profile } from "@/mocks/data";
+import { profile } from "../mocks/data.json";
 
 const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   return (
