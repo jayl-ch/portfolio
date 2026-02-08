@@ -1,4 +1,4 @@
-import { Card } from "../ui/card";
+import { Card } from "../components/ui/card";
 import { about } from "@/mocks/data";
 import AboutIcon from "@/icons/about";
 

@@ -1,6 +1,6 @@
-import { Card } from "../ui/card";
+import { Card } from "../components/ui/card";
 import { techstack } from "@/mocks/data";
-import TechStackIcon from "../../icons/techstack";
+import TechStackIcon from "../icons/techstack";
 import type { TechStackItem } from "@/types/types";
 import { Link } from "react-router-dom";
 

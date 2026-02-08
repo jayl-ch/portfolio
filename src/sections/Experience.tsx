@@ -1,5 +1,5 @@
-import { Card } from "../ui/card";
-import BriefCase from "../../icons/briefcase";
+import { Card } from "../components/ui/card";
+import BriefCase from "../icons/briefcase";
 import type { JourneyItem } from "@/types/types";
 import { journey } from "@/mocks/data";
 

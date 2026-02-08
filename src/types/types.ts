@@ -1,5 +1,5 @@
 export interface DarkToggleProps {
-  isDark?: boolean;
+  isDark: boolean;
   toggleIsDark?: () => void;
 }
 

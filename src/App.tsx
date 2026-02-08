@@ -1,16 +1,19 @@
 import "./styles/App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import { TechStackFull } from "./components/Main/TechStack";
-import useDark from "./hooks/dark-theme";
+import Header from "./layout/Header";
+import Main from "./layout/Main";
+import Footer from "./layout/Footer";
+import { TechStackFull } from "./sections/TechStack";
+import useDark from "./hooks/useDarkTheme";
 import { setDark } from "./lib/body.toggle";
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
   const { isDark, toggleIsDark } = useDark();
 
-  setDark(isDark);
+  useEffect(() => {
+    setDark(isDark);
+  }, [isDark]);
 
   return (
     <>

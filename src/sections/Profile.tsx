@@ -1,8 +1,8 @@
 import react from "@/assets/react.svg";
-import { Button } from "../ui/button";
+import { Button } from "../components/ui/button";
 import type { DarkToggleProps } from "@/types/types";
-import LocationIcon from "../../icons/location";
-import EmailIcon from "../../icons/email";
+import LocationIcon from "../icons/location";
+import EmailIcon from "../icons/email";
 import ResumeIcon from "@/icons/resume";
 import sunIcon from "@/assets/sun.svg";
 import moonIcon from "@/assets/moon.svg";
@@ -21,20 +21,24 @@ const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   );
 };
 
-const Img = () => (
-  <img
-    className="border rounded-xl h-40 w-40"
-    src={react}
-    alt="profile placeholder"
-  />
-);
+const Img = () => {
+  return (
+    <img
+      className="border rounded-xl h-40 w-40"
+      src={react}
+      alt="profile placeholder"
+    />
+  );
+};
 
 const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   return (
     <div className="flex flex-col gap-1 w-full">
       <div className="flex justify-between w-full">
         <div className="flex gap-2 items-center">
-          <p className={`font-bold text-xl sm:text-2xl`}>{profile.name}</p>
+          <p className="font-bold text-lg tracking-tight sm:tracking-normal sm:text-2xl">
+            {profile.name}
+          </p>
           <img className="w-4" src={verifiedIcon} alt="" />
         </div>
         <DarkToggle isDark={isDark} toggleIsDark={toggleIsDark} />
@@ -43,7 +47,7 @@ const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
         <LocationIcon />
         {profile.address}
       </p>
-      <p className="text-sm sm:text-[1.125rem]">{profile.role}</p>
+      <p className="text-xs sm:text-[1.125rem]">{profile.role}</p>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm">
           <ResumeIcon />

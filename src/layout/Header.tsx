@@ -1,4 +1,4 @@
-import Profile from "./Header/Profile";
+import Profile from "../sections/Profile";
 import type { DarkToggleProps } from "../types/types";
 
 const Header = ({ isDark, toggleIsDark }: DarkToggleProps) => {

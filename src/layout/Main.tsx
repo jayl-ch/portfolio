@@ -1,7 +1,7 @@
-import AboutMe from "./Main/About";
-import Experience from "./Main/Experience";
-import TechStack from "./Main/TechStack";
-import Projects from "./Main/Projects";
+import AboutMe from "../sections/About";
+import Experience from "../sections/Experience";
+import TechStack from "../sections/TechStack";
+import Projects from "../sections/Projects";
 
 const Main = () => {
   return (
