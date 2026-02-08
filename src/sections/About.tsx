@@ -1,6 +1,6 @@
 import { Card } from "../components/ui/card";
-import { about } from "@/mocks/data";
-import AboutIcon from "@/icons/about";
+import { about } from "../mocks/data.json";
+import AboutIcon from "../icons/about";
 
 const AboutMe = () => {
   return (
