@@ -1,10 +1,9 @@
 import "./styles/App.css";
-import Header from "./layout/Header";
-import Main from "./layout/Main";
+import Home from "./pages/Home";
 import Footer from "./layout/Footer";
-import { TechStackFull } from "./sections/TechStack";
+import TechStackAll from "./pages/TechStackAll";
 import useDark from "./hooks/useDarkTheme";
-import { setDark } from "./lib/body.toggle";
+import { setDark } from "./lib/setBodyClass";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -20,14 +19,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <div className="flex flex-col gap-4">
-              <Header isDark={isDark} toggleIsDark={toggleIsDark} />
-              <Main />
-            </div>
-          }
+          element={<Home isDark={isDark} toggleIsDark={toggleIsDark} />}
         />
-        <Route path="/techstack" element={<TechStackFull />} />
+        <Route path="/techstack" element={<TechStackAll />} />
       </Routes>
       <Footer />
     </>
