@@ -1,19 +1,8 @@
-import { useEffect, useState } from "react";
-import type { DarkToggleProps } from "../types/types";
+import { useContext } from "react";
+import { ThemeContext } from "../constants/context";
 
-export default function useDark(): DarkToggleProps {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem("theme") === "dark";
-  });
-
-  useEffect(() => {
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
-
-  const toggleIsDark = () => setIsDark((prev) => !prev);
-
-  return { isDark, toggleIsDark };
-}
+export const useTheme = () => {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme must be used inside ThemeProvider");
+  return ctx;
+};

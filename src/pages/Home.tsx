@@ -1,11 +1,10 @@
 import Header from "../layout/Header";
 import Main from "../layout/Main";
-import type { DarkToggleProps } from "../types/types";
 
-const Home = ({ isDark, toggleIsDark }: DarkToggleProps) => {
+const Home = () => {
   return (
     <div className="flex flex-col gap-4">
-      <Header isDark={isDark} toggleIsDark={toggleIsDark} />
+      <Header />
       <Main />
     </div>
   );

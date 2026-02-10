@@ -1,6 +1,6 @@
 import react from "@/assets/react.svg";
 import { Button } from "../components/ui/button";
-import type { DarkToggleProps } from "../types/types";
+import { useTheme } from "../hooks/useDarkTheme";
 import LocationIcon from "../icons/location";
 import EmailIcon from "../icons/email";
 import ResumeIcon from "../icons/resume";
@@ -9,14 +9,20 @@ import moonIcon from "@/assets/moon.svg";
 import verifiedIcon from "@/assets/verified.svg";
 import { profile } from "../mocks/data.json";
 
-const DarkToggle = ({ isDark, toggleIsDark }: DarkToggleProps) => {
+const DarkToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <Button
       variant="outline"
       className="w-10 aspect-square p-3"
-      onClick={toggleIsDark}
+      onClick={toggleTheme}
     >
-      <img className="w-full" src={isDark ? moonIcon : sunIcon} alt="" />
+      <img
+        className="w-full"
+        src={theme === "dark" ? moonIcon : sunIcon}
+        alt=""
+      />
     </Button>
   );
 };
@@ -31,7 +37,7 @@ const Img = () => {
   );
 };
 
-const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
+const Details = () => {
   return (
     <div className="flex flex-col gap-1 w-full">
       <div className="flex justify-between w-full">
@@ -41,7 +47,7 @@ const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
           </p>
           <img className="w-4" src={verifiedIcon} alt="" />
         </div>
-        <DarkToggle isDark={isDark} toggleIsDark={toggleIsDark} />
+        <DarkToggle />
       </div>
       <p className="text-gray-500 text-xs flex items-center gap-1 sm:text-sm">
         <LocationIcon />
@@ -61,12 +67,12 @@ const Details = ({ isDark, toggleIsDark }: DarkToggleProps) => {
   );
 };
 
-const Profile = ({ isDark, toggleIsDark }: DarkToggleProps) => {
+const Profile = () => {
   return (
     <div className="max-w-250 flex justify-between items-start mx-auto">
       <div className="flex items-center gap-4 w-full">
         <Img />
-        <Details isDark={isDark} toggleIsDark={toggleIsDark} />
+        <Details />
       </div>
     </div>
   );

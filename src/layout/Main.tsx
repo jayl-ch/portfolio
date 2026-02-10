@@ -5,7 +5,7 @@ import Projects from "../sections/Projects";
 
 const Main = () => {
   return (
-    <main className="">
+    <main className="animate-appear">
       <div className="grid gap-3 max-w-250 mx-auto md:grid-cols-[1.5fr_1fr]">
         <AboutMe />
         <Experience />
