@@ -142,3 +142,9 @@ body {
   transition: all 0.3s;
   font-family: Arial, sans-serif;
 }
+
+@media (prefers-reduced-transparency: reduce) {
+  * {
+    animation: none;
+  }
+}
