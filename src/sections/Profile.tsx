@@ -69,7 +69,7 @@ const Details = () => {
 
 const Profile = () => {
   return (
-    <div className="max-w-250 flex justify-between items-start mx-auto">
+    <div className="max-w-220 flex justify-between items-start mx-auto">
       <div className="flex items-center gap-4 w-full">
         <Img />
         <Details />
